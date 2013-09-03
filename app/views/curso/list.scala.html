@@ -1,0 +1,18 @@
+@(message: String)
+
+@main("Play-CP Curso") {
+    
+    <form action="@routes.Cursos.create()" method="post" class="form-inline">
+    	<fieldset>
+    		<legend>Crear Curso</legend>
+    		<label>Nombre</label>
+	    	<input type="text" name="nombre" placeholder="Nombre del curso" />
+	    	<button type="submit" class="btn btn-success"><i class="icon-plus"></i>Crear</button>
+    	</fieldset>
+    </form>
+    
+    <ul id="cursos">
+    </ul>
+    
+    <script src="@routes.Assets.at("javascripts/curso.js")" type="text/javascript"></script>
+}
