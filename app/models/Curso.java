@@ -29,7 +29,7 @@ public class Curso extends Model {
     /**
      */
     public static List<Curso> all() {
-        return find.all();
+        return find.orderBy("nombre").findList();
     }
     
 }
