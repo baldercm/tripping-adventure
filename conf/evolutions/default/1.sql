@@ -16,11 +16,7 @@ create sequence curso_seq;
 
 # --- !Downs
 
-SET REFERENTIAL_INTEGRITY FALSE;
-
-drop table if exists curso;
-
-SET REFERENTIAL_INTEGRITY TRUE;
+drop table if exists curso cascade;
 
 drop sequence if exists curso_seq;
 
