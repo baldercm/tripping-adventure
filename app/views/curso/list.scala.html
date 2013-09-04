@@ -2,12 +2,12 @@
 
 @main("Play-CP Curso") {
     
-    <form action="@routes.Cursos.create()" method="post" class="form-inline">
+    <form id="create-curso-form" action="@routes.Cursos.create()" method="post" class="form-inline">
     	<fieldset>
     		<legend>Crear Curso</legend>
     		<label>Nombre</label>
 	    	<input type="text" name="nombre" placeholder="Nombre del curso" />
-	    	<button type="submit" class="btn btn-success"><i class="icon-plus"></i>Crear</button>
+	    	<button id="create-curso-btn" type="submit" class="btn btn-success"><i class="icon-plus-sign icon-white"></i> Crear</button>
     	</fieldset>
     </form>
     

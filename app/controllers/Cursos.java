@@ -21,7 +21,7 @@ public class Cursos extends Controller {
 	public static Result create() {
 		Curso curso = Form.form(Curso.class).bindFromRequest().get();
 		curso.save();
-		return redirect(routes.Cursos.index());
+		return ok(toJson(curso));
 	}
 
 }
