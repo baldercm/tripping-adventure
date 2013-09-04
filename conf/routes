@@ -5,5 +5,10 @@
 # Home page
 GET     /                           controllers.Application.index()
 
+# Curso
+GET     /curso                      controllers.Cursos.index()
+POST    /curso/create               controllers.Cursos.create()
+GET     /curso/list                 controllers.Cursos.listJson()
+
 # Map static resources from the /public folder to the /assets URL path
 GET     /assets/*file               controllers.Assets.at(path="/public", file)
