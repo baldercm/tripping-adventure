@@ -22,11 +22,11 @@ public class Cursos extends Controller {
 		return ok(list.render(cursoForm));
 	}
 	
-	public static Result listJson() {
+	public static Result list() {
 		return ok(toJson(Curso.all()));
 	}
 
-	public static Result create() {
+	public static Result createNoAjax() {
 		Form<Curso> cursoForm = Form.form(Curso.class).bindFromRequest();
 		if(cursoForm.hasErrors()) {
             return badRequest(list.render(cursoForm));
@@ -37,7 +37,7 @@ public class Cursos extends Controller {
         }
 	}
 	
-	public static Result createAjax() {
+	public static Result create() {
 		Curso curso = Form.form(Curso.class).bindFromRequest().get();
 		curso.save();
 		return ok(toJson(curso));

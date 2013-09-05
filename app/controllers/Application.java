@@ -13,8 +13,8 @@ public class Application extends Controller {
     
     public static Result jsRoutes() {
         return ok( Routes.javascriptRouter("jsRoutes",
-        		routes.javascript.Cursos.listJson(),
-        		routes.javascript.Cursos.createAjax(),
+        		routes.javascript.Cursos.list(),
+        		routes.javascript.Cursos.create(),
         		routes.javascript.Cursos.view()));
     }
   

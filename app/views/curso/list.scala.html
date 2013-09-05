@@ -11,7 +11,7 @@
 
 @main("Play-CP Curso", scripts) {
     
-    @helper.form(action = routes.Cursos.createAjax, 'id -> "create-curso-form") {
+    @helper.form(action = routes.Cursos.create, 'id -> "create-curso-form") {
     	<fieldset>
     		<legend>Crear Curso</legend>
     		@inputText(
@@ -25,9 +25,24 @@
     	</fieldset>
     }
     
-    <table id="cursos" class="table table-hover">
-    	<thead></thead>
-    	<tbody></tbody>
-    	<tfoot></tfoot>
-    </table>
+    <div id="cursos-container">
+	    <table id="cursos" class="table table-hover">
+	    	<thead>
+	    		<tr>
+	    			<th>Id</th>
+	    			<th>Nombre</th>
+	    		</tr>
+	    	</thead>
+	    	<tbody></tbody>
+	    	<tfoot></tfoot>
+	    </table>
+    </div>
+    
+    <div id="curso-list-template" class="backbone-template">
+    	<table id="cursos" class="table table-hover">
+	    	<tbody>
+	    		
+	    	</tbody>
+	    </table>
+    </div>
 }
