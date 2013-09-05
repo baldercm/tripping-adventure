@@ -11,7 +11,7 @@
 
 @main("Play-CP Curso", scripts) {
     
-    @helper.form(action = routes.Cursos.create, 'id -> "create-curso-form") {
+    @helper.form(action = routes.Cursos.createAjax, 'id -> "create-curso-form") {
     	<fieldset>
     		<legend>Crear Curso</legend>
     		@inputText(

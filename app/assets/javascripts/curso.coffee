@@ -7,18 +7,21 @@ $ ->
 	
 	$('button#create-curso-btn').click (event) ->
 		event.preventDefault()
-		jqxhr = $.post jsRoutes.controllers.Cursos.createAjax().url, $('form#create-curso-form').serialize(), (data) ->
-			$('form#create-curso-form')[0].reset()
-			link = $('<a>').attr('href', jsRoutes.controllers.Cursos.view(data.id).url) .text data.nombre
+		form = $('form#create-curso-form').get()[0]
+		#form.reset()
+		nombre = form.nombre.value
+		curso = new Curso
+			nombre: nombre
+		curso.save null, success: ->
+			console.log curso.nombre
+			href = jsRoutes.controllers.Cursos.view(curso.id).url
+			text = curso.get 'nombre'
+			link = $('<a>').attr('href', href).text text
 			$('#cursos tbody').append $('<tr>').append $('<td>').append link
 
-# --- Curso model ---
-Curso = Backbone.Model.extend
+# Curso model
+class Curso extends Backbone.Model
 	initialize: ->
 		console.log 'Curso Initialized...'
-		@on 'all', (e) -> console.log @get 'name' + 'event: ' + e
-	defaults:
-		nombre: 'Sin Nombre'
-curso = new Curso
-			nombre: 'Baldomero'
-		console.log curso
+		@on 'all', (e) -> console.log @get('nombre') + ' event: ' + e
+	urlRoot: '/curso'

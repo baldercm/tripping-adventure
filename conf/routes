@@ -8,9 +8,9 @@ GET    /scala                       controllers.ApplicationScala.index()
 
 # Curso
 GET    /curso                       controllers.Cursos.index()
-POST   /curso/create                controllers.Cursos.create()
-POST   /curso/createAjax            controllers.Cursos.createAjax()
-GET    /curso/list                  controllers.Cursos.listJson()
+#POST   /curso                       controllers.Cursos.create()
+POST   /curso                       controllers.Cursos.createAjax()
+GET    /curso/listJson              controllers.Cursos.listJson()
 GET    /curso/:id                   controllers.Cursos.view(id: Long)
 
 # Javascript routing
