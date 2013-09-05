@@ -1,7 +1,6 @@
 package controllers;
 
 import models.*;
-import play.*;
 import play.data.*;
 import play.mvc.*;
 import static play.data.Form.*;
@@ -15,6 +14,12 @@ public class Cursos extends Controller {
 	
 	public static Result index() {
 		return ok(list.render(cursoEmptyForm));
+	}
+	
+	public static Result view(Long id) {
+		Curso curso = Curso.find.byId(id);
+		Form<Curso> cursoForm = Form.form(Curso.class).fill(curso);
+		return ok(list.render(cursoForm));
 	}
 	
 	public static Result listJson() {
