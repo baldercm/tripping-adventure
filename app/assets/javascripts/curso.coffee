@@ -1,11 +1,13 @@
 $ ->
-	$.get "/curso/list", (data) ->
+	$.get jsRoutes.controllers.Cursos.listJson().url, (data) ->
 		$("#cursos thead").append $("<tr>").append $("<th>").text "Curso"
 		$.each data, (index, curso) ->
-			$("#cursos tbody").append $("<tr>").append $("<td>").text curso.nombre
+			link = $("<a>").attr("href", jsRoutes.controllers.Cursos.view(curso.id).url) .text curso.nombre
+			$("#cursos tbody").append $("<tr>").append $("<td>").append link 
 	
 	$("button#create-curso-btn").click (event) ->
 		event.preventDefault()
-		jqxhr = $.post '/curso/createAjax', $("form#create-curso-form").serialize(), (data) ->
+		jqxhr = $.post jsRoutes.controllers.Cursos.createAjax().url, $("form#create-curso-form").serialize(), (data) ->
 			$("form#create-curso-form")[0].reset()
-			$("#cursos tbody").append $("<tr>").append $("<td>").text data.nombre
+			link = $("<a>").attr("href", jsRoutes.controllers.Cursos.view(data.id).url) .text data.nombre
+			$("#cursos tbody").append $("<tr>").append $("<td>").append link
