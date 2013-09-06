@@ -18,8 +18,7 @@ public class Cursos extends Controller {
 	
 	public static Result view(Long id) {
 		Curso curso = Curso.find.byId(id);
-		Form<Curso> cursoForm = Form.form(Curso.class).fill(curso);
-		return ok(list.render(cursoForm));
+		return ok(toJson(curso));
 	}
 	
 	public static Result list() {
@@ -40,6 +39,12 @@ public class Cursos extends Controller {
 	public static Result create() {
 		Curso curso = Form.form(Curso.class).bindFromRequest().get();
 		curso.save();
+		return ok(toJson(curso));
+	}
+	
+	public static Result update() {
+		Curso curso = Form.form(Curso.class).bindFromRequest().get();
+		curso.update();
 		return ok(toJson(curso));
 	}
 
