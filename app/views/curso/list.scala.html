@@ -11,21 +11,10 @@
 
 @main("Play-CP Curso", scripts) {
     
-    @helper.form(action = routes.Cursos.create, 'id -> "create-curso-form") {
-    	<fieldset>
-    		<legend>Crear Curso</legend>
-    		@inputText(
-                cursoForm("nombre"), 
-                '_label -> "Nombre", 
-                '_help -> "",
-                '_error -> cursoForm.error("nombre")
-            )
-	    	<button id="create-curso-btn" type="submit" class="btn btn-success"><i class="icon-plus-sign icon-white"></i> Crear (Ajax)</button>
-	    	<button type="submit" class="btn"><i class="icon-plus-sign icon-white"></i> Crear (NoAjax)</button>
-    	</fieldset>
-    }
+    <div id="form-curso-container">
+    </div>
     
-    <div id="cursos-container">
+    <div id="list-curso-container">
 	    <table id="cursos" class="table table-hover">
 	    	<thead>
 	    		<tr>
