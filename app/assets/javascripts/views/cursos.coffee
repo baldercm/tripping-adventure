@@ -24,4 +24,4 @@ class app.CursosView extends Backbone.View
 		cursoView = new app.CursoView {model: curso}
 		cursoView.render()
 		@$el.find('tbody').append cursoView.el
-	el: '#cursos' 
+	el: '#cursosContainer' 

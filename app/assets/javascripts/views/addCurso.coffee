@@ -10,4 +10,4 @@ class app.AddCursoView extends Backbone.View
 		console.log 'AddCursoView Rendered...'
 		@$el.html @template @model.toJSON()
 	template: _.template $('#addCursoTemplate').html()
-	el: '#cursos' 
+	el: '#addCursoContainer' 
