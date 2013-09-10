@@ -4,7 +4,6 @@
 
 # Home page
 GET    /                            controllers.Application.index()
-GET    /scala                       controllers.ApplicationScala.index()
 
 # Curso
 GET    /cursos                      controllers.Cursos.index()
