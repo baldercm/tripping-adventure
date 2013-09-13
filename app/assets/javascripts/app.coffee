@@ -12,6 +12,5 @@ require.config
 		'underscore':
 			exports: '_'
 
-require ['views/cursos', 'views/addCurso'], (CursosView, AddCursoView) ->
-		addCursoView = new AddCursoView
-		cursosView = new CursosView
+require ['views/cursos'], (CursosView) ->
+	cursosView = new CursosView
