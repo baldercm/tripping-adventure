@@ -1,8 +1,9 @@
 require.config
 	paths:
-		backbone   : 'lib/backbone'
 		jquery     : 'lib/jquery-1.10.2'
 		underscore : 'lib/underscore'
+		backbone   : 'lib/backbone'
+		bootstrap  : 'lib/bootstrap'
 		text       : 'lib/require.text'
 		templates  : '../templates'
 	shim:
