@@ -6,6 +6,8 @@ require.config
 		bootstrap  : 'lib/bootstrap'
 		text       : 'lib/require.text'
 		templates  : '../templates'
+		curso      : 'curso.min'
+		cursos     : 'cursos.min'
 	shim:
 		'backbone':
 			deps: ['underscore', 'jquery']
