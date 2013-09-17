@@ -1,5 +1,5 @@
-define ['jquery', 'underscore', 'backbone', 'text!templates/curso.html'], ($, _, Backbone, cursoTemplate) ->
-	CursoView = Backbone.View.extend
+define ['jquery', 'underscore', 'marionette', 'text!templates/curso.html'], ($, _, Marionette, cursoTemplate) ->
+	CursoView = Marionette.ItemView.extend
 		initialize: ->
 			#console.log 'CursoView Initialized...'
 			#@on 'all', (e) -> console.log 'CursoView event: ' + e
@@ -7,9 +7,6 @@ define ['jquery', 'underscore', 'backbone', 'text!templates/curso.html'], ($, _,
 			'click .edit' : 'editCurso'
 		editCurso: ->
 			console.warn 'TODO editCurso'
-		render: ->
-			console.log 'CursoView Rendered...'
-			@$el.html @template @model.toJSON()
 		tagName:   'tr'
 		className: 'cursoRow'
 		template: _.template cursoTemplate
