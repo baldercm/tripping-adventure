@@ -8,5 +8,5 @@ define ['jquery', 'underscore', 'marionette', 'text!templates/curso.html'], ($, 
 		editCurso: ->
 			console.warn 'TODO editCurso'
 		tagName:   'tr'
-		className: 'cursoRow'
+		className: 'curso-view'
 		template: _.template cursoTemplate

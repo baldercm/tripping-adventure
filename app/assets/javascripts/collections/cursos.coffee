@@ -1,5 +1,4 @@
-define ['backbone', 'models/curso'],
-(Backbone, Curso) ->
+define ['backbone', 'models/curso'], (Backbone, Curso) ->
 	Cursos = Backbone.Collection.extend
 		initialize: ->
 			#console.log 'CursoList Initialized...'
