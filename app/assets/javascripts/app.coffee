@@ -16,18 +16,20 @@ require.config
 			deps: ['jquery', 'underscore']
 			exports: 'Backbone'
 		'marionette':
-			deps : ['jquery', 'underscore', 'backbone']
+			deps : ['backbone']
 			exports : 'Marionette'
 
-require ['collections/cursos', 'views/cursos', 'controllers/cursos', 'marionette'], (Cursos, CursosView, CursosController, Marionette) ->
+require ['marionette', 'controllers/cursos'], (Marionette, CursosController) ->
 	App = new Marionette.Application()
 	
 	App.addRegions
-		"cursos": "#cursos-list"
+		"form": "#cursos #form"
+		"list": "#cursos #list"
 	
 	App.addInitializer ->
 		cursosController = new CursosController
-			region: App.cursos
+			form: App.form
+			list: App.list
 		cursosController.show()
 	
 	App.start()
