@@ -4,6 +4,7 @@ require.config
 		underscore : 'empty:'
 		backbone   : 'empty:'
 		syphon     : 'empty:'
+		wreqr      : 'empty:'
 		marionette : 'empty:'
 		bootstrap  : 'empty:'
 		templates  : '../templates'
