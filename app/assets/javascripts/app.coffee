@@ -1,25 +1,4 @@
-require.config
-	paths:
-		jquery     : 'lib/jquery-1.10.2'
-		underscore : 'lib/underscore'
-		backbone   : 'lib/backbone'
-		marionette : 'lib/backbone.marionette'
-		bootstrap  : 'lib/bootstrap'
-		text       : 'lib/require.text'
-		templates  : '../templates'
-		curso      : 'curso.min'
-		cursos     : 'cursos.min'
-	shim:
-		'underscore':
-			exports: '_'
-		'backbone':
-			deps: ['jquery', 'underscore']
-			exports: 'Backbone'
-		'marionette':
-			deps : ['backbone']
-			exports : 'Marionette'
-
-require ['marionette', 'controllers/cursos'], (Marionette, CursosController) ->
+define ['marionette', 'collections/cursos', 'views/cursos', 'views/cursoForm'], (Marionette, Cursos, CursosView, CursoFormView) ->
 	App = new Marionette.Application()
 	
 	App.addRegions
@@ -27,9 +6,14 @@ require ['marionette', 'controllers/cursos'], (Marionette, CursosController) ->
 		"list": "#cursos #list"
 	
 	App.addInitializer ->
-		cursosController = new CursosController
-			form: App.form
-			list: App.list
-		cursosController.show()
+		cursoFormView = new CursoFormView
+		App.form.show cursoFormView
+		
+		cursos = new Cursos
+		cursos.fetch
+			reset: true
+		cursosView = new CursosView
+			collection: cursos
+		App.list.show cursosView
 	
-	App.start()
+	App
