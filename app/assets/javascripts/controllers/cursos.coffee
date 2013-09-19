@@ -1,15 +1,16 @@
-define ['jquery', 'underscore', 'marionette', 'collections/cursos', 'views/cursos', 'views/cursoForm'], ($, _, Marionette, Cursos, CursosView, CursoFormView) ->
+define ['jquery', 'underscore', 'marionette', 'layouts/curso', 'collections/cursos', 'views/cursos', 'views/cursoForm'],
+($, _, Marionette, CursoLayout, Cursos, CursosView, CursoFormView) ->
 	CursosController = Marionette.Controller.extend
-		initialize: (options) ->
-			@form = options.form
-			@list = options.list
-		show: ->
-			cursoFormView = new CursoFormView
-			@form.show cursoFormView
-			
+		start: ->
 			cursos = new Cursos
-			cursos.fetch
-				reset: true
-			cursosView = new CursosView
-				collection: cursos
-			@list.show cursosView
+			
+			container = new Marionette.Region
+  				el: "#container"
+  			
+			layout = new CursoLayout
+			container.show layout
+			
+			layout.form.show new CursoFormView
+			layout.list.show new CursosView {collection: cursos}
+			
+			cursos.fetch {reset: true}
