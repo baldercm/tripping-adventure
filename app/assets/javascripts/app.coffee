@@ -1,4 +1,4 @@
-define ['marionette', 'collections/cursos', 'views/cursos', 'views/cursoForm'], (Marionette, Cursos, CursosView, CursoFormView) ->
+define ['marionette', 'controllers/cursos'], (Marionette, CursosController) ->
 	App = new Marionette.Application()
 	
 	App.addRegions
@@ -6,14 +6,7 @@ define ['marionette', 'collections/cursos', 'views/cursos', 'views/cursoForm'], 
 		"list": "#cursos #list"
 	
 	App.addInitializer ->
-		cursoFormView = new CursoFormView
-		App.form.show cursoFormView
-		
-		cursos = new Cursos
-		cursos.fetch
-			reset: true
-		cursosView = new CursosView
-			collection: cursos
-		App.list.show cursosView
+		controller = new CursosController
+		controller.start()
 	
 	App

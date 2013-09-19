@@ -18,5 +18,5 @@ require.config
 			exports : 'Marionette'
 
 require ['app'], (App) ->
-	"use strict";
+	"use strict"
 	App.start()
