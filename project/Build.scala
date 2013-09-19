@@ -18,11 +18,7 @@ object ApplicationBuild extends Build {
   val main = play.Project(appName, appVersion, appDependencies).settings(
     resolvers += "Local Maven Repository" at "file:///"+Path.userHome.absolutePath+"/.m2/repository",
     requireJsShim += "build.js",
-    requireJs += "app.js",
-    requireJs += "models/curso.js",
-    requireJs += "collections/cursos.js",
-    requireJs += "views/curso.js",
-    requireJs += "views/cursos.js"
+    requireJs += "app.js"
   )
 
 }

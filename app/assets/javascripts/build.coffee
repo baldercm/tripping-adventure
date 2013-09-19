@@ -5,8 +5,8 @@ require.config
 		backbone   : 'empty:'
 		marionette : 'empty:'
 		bootstrap  : 'empty:'
-		text       : 'lib/require.text'
 		templates  : '../templates'
+	
 	shim:
 		'underscore':
 			exports: '_'
@@ -14,5 +14,7 @@ require.config
 			deps: ['jquery', 'underscore']
 			exports: 'Backbone'
 		'marionette':
-			deps : ['jquery', 'underscore', 'backbone']
+			deps : ['backbone']
 			exports : 'Marionette'
+	
+	stubModules: ['text']
