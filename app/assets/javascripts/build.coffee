@@ -3,6 +3,7 @@ require.config
 		jquery     : 'empty:'
 		underscore : 'empty:'
 		backbone   : 'empty:'
+		syphon     : 'empty:'
 		marionette : 'empty:'
 		bootstrap  : 'empty:'
 		templates  : '../templates'
