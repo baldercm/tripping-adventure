@@ -10,7 +10,9 @@ define ['jquery', 'underscore', 'marionette', 'layouts/curso', 'collections/curs
 			layout = new CursoLayout
 			container.show layout
 			
-			layout.form.show new CursoFormView
-			layout.list.show new CursosView {collection: cursos}
+			options = {collection: cursos}
+			
+			layout.form.show new CursoFormView options
+			layout.list.show new CursosView options
 			
 			cursos.fetch {reset: true}

@@ -9,7 +9,8 @@ GET    /                            controllers.Application.index()
 GET    /cursos                      controllers.Cursos.index()
 
 GET    /api/cursos                  controllers.Cursos.list()
-POST   /api/cursos                  controllers.Cursos.create()
+PUT    /api/cursos                  controllers.Cursos.create()
+POST   /api/cursos                  controllers.Cursos.update()
 GET    /api/cursos/:id              controllers.Cursos.view(id: Long)
 
 # Javascript routing
