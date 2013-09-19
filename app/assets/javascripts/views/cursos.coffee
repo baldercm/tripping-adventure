@@ -1,8 +1,5 @@
-define ['jquery', 'underscore', 'marionette', 'views/curso', 'text!templates/cursos.html'], ($, _, Marionette, CursoView, cursosTemplate) ->
+define ['jquery', 'underscore', 'marionette', 'views/curso', 'templates'], ($, _, Marionette, CursoView, templates) ->
 	CursosView =  Marionette.CompositeView.extend
-		initialize: ->
-			#console.log 'CursoListView Initialized...'
-			#@on 'all', (e) -> console.log 'CursoListView event: ' + e
+		template: _.template templates.cursos
 		itemView: CursoView
 		itemViewContainer: 'tbody'
-		template: _.template cursosTemplate

@@ -1,12 +1,9 @@
-define ['jquery', 'underscore', 'marionette', 'text!templates/curso.html'], ($, _, Marionette, cursoTemplate) ->
+define ['jquery', 'underscore', 'marionette', 'templates'], ($, _, Marionette, templates) ->
 	CursoView = Marionette.ItemView.extend
-		initialize: ->
-			#console.log 'CursoView Initialized...'
-			#@on 'all', (e) -> console.log 'CursoView event: ' + e
+		template: _.template templates.curso
 		events:
 			'click .edit' : 'editCurso'
 		editCurso: ->
 			console.warn 'TODO editCurso'
 		tagName:   'tr'
 		className: 'curso-view'
-		template: _.template cursoTemplate

@@ -6,7 +6,7 @@ require.config
 		marionette : '//cdnjs.cloudflare.com/ajax/libs/backbone.marionette/1.1.0-bundled/backbone.marionette.min'
 		text       : '//cdnjs.cloudflare.com/ajax/libs/require-text/2.0.10/text.min'
 		bootstrap  : '//netdna.bootstrapcdn.com/twitter-bootstrap/2.3.2/js/bootstrap.min'
-		templates  : '../templates'
+		templatesPath : '../templates'
 	shim:
 		'underscore':
 			exports: '_'
@@ -18,5 +18,5 @@ require.config
 			exports : 'Marionette'
 
 require ['app'], (App) ->
-	"use strict"
+	'use strict'
 	App.start()

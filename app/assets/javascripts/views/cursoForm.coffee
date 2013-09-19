@@ -1,3 +1,3 @@
-define ['jquery', 'underscore', 'marionette', 'text!templates/cursoForm.html'], ($, _, Marionette, cursoFormTemplate) ->
+define ['jquery', 'underscore', 'marionette', 'templates'], ($, _, Marionette, templates) ->
 	CursoFormView = Marionette.ItemView.extend
-		template: _.template cursoFormTemplate
+		template: _.template templates.cursoForm

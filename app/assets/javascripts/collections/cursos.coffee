@@ -4,6 +4,6 @@ define ['backbone', 'models/curso'], (Backbone, Curso) ->
 			#console.log 'CursoList Initialized...'
 			@on 'all', (e) -> console.log 'CursoList event: ' + e
 		comparator: (curso) ->
-  			curso.get("nombre").toLowerCase()
+  			curso.get('nombre').toLowerCase()
 		model: Curso
 		url: '/api/cursos'
