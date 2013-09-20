@@ -15,6 +15,12 @@ require.config
 		'backbone':
 			deps: ['jquery', 'underscore']
 			exports: 'Backbone'
+		'syphon':
+			deps : ['backbone']
+			exports : 'Backbone.Syphon'
+		'wreqr':
+			deps : ['backbone']
+			exports : 'Backbone.Wreqr'
 		'marionette':
 			deps : ['backbone']
 			exports : 'Marionette'
