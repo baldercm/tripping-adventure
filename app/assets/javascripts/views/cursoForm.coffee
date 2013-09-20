@@ -1,6 +1,9 @@
-define ['jquery', 'underscore', 'syphon', 'marionette', 'templates'], ($, _, Syphon, Marionette, templates) ->
+define ['jquery', 'underscore', 'syphon', 'marionette', 'vent', 'templates', 'models/curso'], ($, _, Syphon, Marionette, vent, templates, Curso) ->
 	Marionette.ItemView.extend
 		template: _.template templates.cursoForm
+		initialize: ->
+			vent.bind 'curso:edit', @editCurso, @
+			@model = new Curso
 		ui:
 			form: '#cursoForm'
 		events:
@@ -8,6 +11,11 @@ define ['jquery', 'underscore', 'syphon', 'marionette', 'templates'], ($, _, Syp
 		addCurso: (e) ->
 			e.preventDefault()
 			data = Syphon.serialize @ui.form[0]
-			@collection.create data, {wait: true}
+			@model.set data
+			@collection.create @model.attributes, {wait: true}
 			@collection.sort()
 			@ui.form[0].reset()
+			@model = new Curso
+		editCurso: (curso) ->
+			@model = curso
+			Syphon.deserialize @, curso.attributes
