@@ -1,5 +1,5 @@
 define ['jquery', 'underscore', 'marionette', 'templates'], ($, _, Marionette, templates) ->
-	class CursoView extends Marionette.ItemView
+	Marionette.ItemView.extend
 		template: _.template templates.curso
 		events:
 			'click .edit' : 'editCurso'

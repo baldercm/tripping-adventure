@@ -1,5 +1,5 @@
 define ['jquery', 'underscore', 'marionette', 'views/curso', 'templates'], ($, _, Marionette, CursoView, templates) ->
-	class CursosView extends Marionette.CompositeView
+	Marionette.CompositeView.extend
 		template: _.template templates.cursos
 		itemView: CursoView
 		itemViewContainer: 'tbody'

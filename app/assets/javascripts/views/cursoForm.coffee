@@ -1,5 +1,5 @@
 define ['jquery', 'underscore', 'syphon', 'marionette', 'templates'], ($, _, Syphon, Marionette, templates) ->
-	class CursoFormView extends Marionette.ItemView
+	Marionette.ItemView.extend
 		template: _.template templates.cursoForm
 		ui:
 			form: '#cursoForm'

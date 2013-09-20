@@ -1,5 +1,5 @@
 define ['underscore', 'marionette', 'templates'], (_, Marionette, templates) ->
-	class CursoLayout extends Marionette.Layout
+	Marionette.Layout.extend
 		template: _.template templates.cursoLayout
 		regions:
 			form: '#form'

@@ -1,6 +1,6 @@
 define ['jquery', 'underscore', 'marionette', 'layouts/curso', 'collections/cursos', 'views/cursos', 'views/cursoForm'],
 ($, _, Marionette, CursoLayout, Cursos, CursosView, CursoFormView) ->
-	class CursosController extends Marionette.Controller
+	Marionette.Controller.extend
 		start: ->
 			cursos = new Cursos
 			

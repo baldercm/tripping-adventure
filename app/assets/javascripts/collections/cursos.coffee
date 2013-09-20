@@ -1,5 +1,5 @@
 define ['backbone', 'models/curso'], (Backbone, Curso) ->
-	class Cursos extends Backbone.Collection
+	Backbone.Collection.extend
 		initialize: ->
 			#console.log 'CursoList Initialized...'
 			@on 'all', (e) -> console.log 'CursoList event: ' + e
