@@ -5,7 +5,7 @@ define ['jquery', 'underscore', 'marionette', 'layouts/curso', 'collections/curs
 			cursos = new Cursos
 			
 			container = new Marionette.Region
-  				el: '#container'
+  				el: '#curso-container'
   			
 			layout = new CursoLayout
 			container.show layout
