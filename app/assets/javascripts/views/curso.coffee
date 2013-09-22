@@ -6,7 +6,6 @@ define ['jquery', 'underscore', 'marionette', 'vent', 'templates', 'views/cursoF
 		events:
 			'click .edit' : 'editCurso'
 		editCurso: ->
-			app = require 'app'
 			vent.trigger 'curso:edit', @model
 		tagName:   'tr'
 		className: 'curso-view'
