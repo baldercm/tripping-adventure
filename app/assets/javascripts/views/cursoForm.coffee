@@ -7,12 +7,12 @@ define ['jquery', 'underscore', 'syphon', 'marionette', 'vent', 'templates', 'mo
 		ui:
 			form: '#cursoForm'
 		events:
-			'click #add': 'addCurso'
-		addCurso: (e) ->
+			'click #save': 'saveCurso'
+		saveCurso: (e) ->
 			e.preventDefault()
 			data = Syphon.serialize @ui.form[0]
 			@model.set data
-			@collection.create @model.attributes, {wait: true}
+			@collection.create @model, {wait: true}
 			@collection.sort()
 			@ui.form[0].reset()
 			@model = new Curso
