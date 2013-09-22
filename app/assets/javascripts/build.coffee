@@ -3,6 +3,7 @@ require.config
 		jquery     : 'empty:'
 		underscore : 'empty:'
 		backbone   : 'empty:'
+		validation : 'empty:'
 		syphon     : 'empty:'
 		wreqr      : 'empty:'
 		marionette : 'empty:'

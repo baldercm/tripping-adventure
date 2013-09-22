@@ -5,4 +5,8 @@ define ['backbone'], (Backbone) ->
 			@on 'all', (e) -> console.log @get('nombre') + ' event: ' + e
 		defaults:
 			nombre: '----'
+		validation:
+			nombre:
+				required: true
+				msg: 'Nombre obligatorio'
 		url: 'api/cursos'
