@@ -8,5 +8,6 @@ define ['backbone'], (Backbone) ->
 		validation:
 			nombre:
 				required: true
+				minLength: 1
 				msg: 'Nombre obligatorio'
 		url: 'api/cursos'

@@ -18,6 +18,8 @@ define ['jquery', 'underscore', 'validation', 'syphon', 'marionette', 'vent', 't
 				@collection.sort()
 				@ui.form[0].reset()
 				@model = new Curso
+				Validation.bind @
 		editCurso: (curso) ->
 			@model = curso
+			Validation.bind @
 			Syphon.deserialize @, curso.attributes
