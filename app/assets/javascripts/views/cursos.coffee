@@ -1,6 +1,6 @@
 define ['jquery', 'underscore', 'marionette', 'views/curso', 'templates'], ($, _, Marionette, CursoView, templates) ->
 	Marionette.CompositeView.extend
-		template: _.template templates.cursos
+		template: templates.cursos
 		itemView: CursoView
 		itemViewContainer: 'tbody'
 		_initialEvents: ->

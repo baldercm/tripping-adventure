@@ -7,7 +7,6 @@ require.config
 		syphon     : '//cdnjs.cloudflare.com/ajax/libs/backbone.syphon/0.4.1/backbone.syphon.min'
 		wreqr      : '//cdnjs.cloudflare.com/ajax/libs/backbone.wreqr/0.1.0/backbone.wreqr.min'
 		marionette : '//cdnjs.cloudflare.com/ajax/libs/backbone.marionette/1.1.0-bundled/backbone.marionette.min'
-		text       : '//cdnjs.cloudflare.com/ajax/libs/require-text/2.0.10/text.min'
 		bootstrap  : '//netdna.bootstrapcdn.com/bootstrap/3.0.0/js/bootstrap.min'
 		templatesPath : '../templates'
 	shim:

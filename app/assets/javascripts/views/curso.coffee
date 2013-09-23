@@ -1,6 +1,6 @@
 define ['jquery', 'underscore', 'marionette', 'vent', 'templates', 'views/cursoForm'], ($, _, Marionette, vent, templates, CursoFormView) ->
 	Marionette.ItemView.extend
-		template: _.template templates.curso
+		template: templates.curso
 		initialize: ->
 			@model.bind 'change', @render, @
 		events:

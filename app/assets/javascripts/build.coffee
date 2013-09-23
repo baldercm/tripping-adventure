@@ -8,7 +8,7 @@ require.config
 		wreqr      : 'empty:'
 		marionette : 'empty:'
 		bootstrap  : 'empty:'
-		templates  : '../templates'
+		templatesPath : '../templates'
 	
 	shim:
 		'underscore':
@@ -26,4 +26,4 @@ require.config
 			deps : ['backbone']
 			exports : 'Marionette'
 	
-	stubModules: ['text']
+	#stubModules: ['tpl']
