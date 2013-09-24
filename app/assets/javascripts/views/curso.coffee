@@ -4,8 +4,10 @@ define ['jquery', 'underscore', 'marionette', 'vent', 'templates', 'views/cursoF
 		initialize: ->
 			@model.bind 'change', @render, @
 		events:
-			'click .edit' : 'editCurso'
-		editCurso: ->
-			vent.trigger 'curso:edit', @model
+			"click a.edit" : "editClicked"
 		tagName:   'tr'
 		className: 'curso-view'
+		editClicked: (e) ->
+			e.preventDefault()
+			e.stopPropagation()
+			vent.trigger "curso:edit", @model
