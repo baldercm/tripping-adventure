@@ -10,3 +10,4 @@ define ['backbone'], (Backbone) ->
 				required: true
 				minLength: 1
 				msg: 'Nombre obligatorio'
+		url: 'api/cursos'
