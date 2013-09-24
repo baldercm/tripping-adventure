@@ -1,4 +1,4 @@
-define ['marionette', 'controllers/cursos'], (Marionette, CursosController) ->
+define ['backbone', 'marionette', 'router', 'controllers/cursos'], (Backbone, Marionette, AppRouter, CursosController) ->
 	App = new Marionette.Application()
 	
 	App.addRegions
@@ -6,6 +6,8 @@ define ['marionette', 'controllers/cursos'], (Marionette, CursosController) ->
 		'list': '#cursos #list'
 	
 	App.addInitializer ->
+		new AppRouter
+		Backbone.history.start {root: "/cursos"}
 		controller = new CursosController
 		controller.start()
 		

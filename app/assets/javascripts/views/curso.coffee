@@ -1,4 +1,4 @@
-define ['jquery', 'underscore', 'marionette', 'vent', 'templates', 'views/cursoForm'], ($, _, Marionette, vent, templates, CursoFormView) ->
+define ['jquery', 'underscore', 'backbone', 'marionette', 'vent', 'templates', 'views/cursoForm'], ($, _, Backbone, Marionette, vent, templates, CursoFormView) ->
 	Marionette.ItemView.extend
 		template: templates.curso
 		initialize: ->
@@ -10,4 +10,5 @@ define ['jquery', 'underscore', 'marionette', 'vent', 'templates', 'views/cursoF
 		editClicked: (e) ->
 			e.preventDefault()
 			e.stopPropagation()
+			Backbone.history.navigate(@model.id + "/edit");
 			vent.trigger "curso:edit", @model
