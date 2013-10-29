@@ -8,7 +8,7 @@ import views.html.*;
 public class Application extends Controller {
   
     public static Result index() {
-        return ok(index.render("Your new application is ready in Java."));
+        return ok(index.render("Welcome to Play 2.2"));
     }
     
     public static Result jsRoutes() {
