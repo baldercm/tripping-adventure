@@ -1,29 +1,28 @@
 require.config
-	paths:
-		jquery     : 'empty:'
-		underscore : 'empty:'
-		backbone   : 'empty:'
-		validation : 'empty:'
-		syphon     : 'empty:'
-		wreqr      : 'empty:'
-		marionette : 'empty:'
-		bootstrap  : 'empty:'
-		templatesPath : '../templates'
-	
-	shim:
-		'underscore':
-			exports: '_'
-		'backbone':
-			deps: ['jquery', 'underscore']
-			exports: 'Backbone'
-		'syphon':
-			deps : ['backbone']
-			exports : 'Backbone.Syphon'
-		'wreqr':
-			deps : ['backbone']
-			exports : 'Backbone.Wreqr'
-		'marionette':
-			deps : ['backbone']
-			exports : 'Marionette'
-	
-	#stubModules: ['tpl']
+  paths:
+    'backbone'           : 'empty:'
+    'backbone.babysitter': 'empty:'
+    'backbone.picky'     : 'empty:'
+    'backbone.syphon'    : 'empty:'
+    'backbone.validation': 'empty:'
+    'backbone.wreqr'     : 'empty:'
+    'bootstrap'          : 'empty:'
+    'json2'              : 'empty:'
+    'jquery'             : 'empty:'
+    'jquery.spin'        : 'empty:'
+    'marionette'         : 'empty:'
+    'spin'               : 'empty:'
+    'tpl'                : 'lib/tpl'
+    'underscore'         : 'empty:'
+    'templates'          : '../templates'
+
+  shim:
+    'underscore':
+      exports: '_'
+    'backbone':
+      deps: ['jquery', 'underscore', 'json2']
+      exports: 'Backbone'
+    'bootstrap': ['jquery']
+    'jquery.spin': ['spin', 'jquery']
+
+  stubModules: ['tpl']
