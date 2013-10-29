@@ -5,9 +5,8 @@
 # Home page
 GET    /                            controllers.Application.index()
 
+# REST API
 # Curso
-GET    /cursos                      controllers.Cursos.index()
-
 GET    /api/cursos                  controllers.Cursos.list()
 POST   /api/cursos                  controllers.Cursos.create()
 PUT    /api/cursos                  controllers.Cursos.update()

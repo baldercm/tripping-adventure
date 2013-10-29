@@ -15,7 +15,6 @@ define [
           minLength: 1
           msg: 'Nombre obligatorio'
       urlRoot: 'api/cursos'
-      idAttribute: '_id'
 
     class Model.CursoCollection extends Backbone.Collection
 #       initialize: ->
