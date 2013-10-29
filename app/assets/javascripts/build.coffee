@@ -12,7 +12,7 @@ require.config
     'jquery.spin'        : 'empty:'
     'marionette'         : 'empty:'
     'spin'               : 'empty:'
-    'tpl'                : 'lib/tpl'
+    'tpl'                : 'tpl'
     'underscore'         : 'empty:'
     'templates'          : '../templates'
 
