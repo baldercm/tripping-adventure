@@ -40,6 +40,6 @@
 	    </section>
         
         <script src="@routes.Application.jsRoutes" type="text/javascript"></script>
-        @helper.requireJs(core = routes.Assets.at("javascripts/require.js").url, module = routes.Assets.at("javascripts/main").url)
+        @helper.requireJs(core = routes.Assets.at("javascripts/lib/require.js").url, module = routes.Assets.at("javascripts/main").url)
     </body>
 </html>
